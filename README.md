@@ -33,10 +33,11 @@
 phplint7:
     stage: lint
     image: php:7.3-alpine
-    script:
+    before_script:
         - apk add git
         - git submodule sync --recursive
         - git submodule update --init --recursive
+    script:
         - ./_code_quality/phplint.sh
 
 phpcs:
