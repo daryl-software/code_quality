@@ -1,12 +1,17 @@
 # Code quality tools
 
+### Install composer deps in your project
+```bash
+composer require --dev squizlabs/php_codesniffer
+```
+
 #### Setup
-- add me as git submodule relative (from gitlab) to your project
+- add project as git submodule relative (from gitlab) to your project
      ```
      # file: .gitmodules example for dating/fusion project
      [submodule "_code_quality"]
         	path = _code_quality
-        	url = ../../global/code_quality.git
+        	url = git@github.com:ezweb/code_quality.git
      ```
      
      
