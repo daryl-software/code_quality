@@ -13,6 +13,11 @@ composer require --dev squizlabs/php_codesniffer
         	path = _code_quality
         	url = git@github.com:ezweb/code_quality.git
      ```
+- you can also call hooks provided in your project 
+    ```
+    # .hooks/pre-commit    
+    ./_code_quality/git-hooks/php-pre-commit # call
+    ```
      
      
 #### Configure/extend local phpcs configuration
