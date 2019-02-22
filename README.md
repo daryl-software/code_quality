@@ -2,7 +2,7 @@
 
 ### Install composer deps in your project
 ```bash
-composer require --dev squizlabs/php_codesniffer
+composer require --dev squizlabs/php_codesniffer phpstan/phpstan
 ```
 
 #### Setup

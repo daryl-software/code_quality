@@ -1,7 +1,8 @@
 #!/bin/sh
 
-PROJECT=`dirname $(dirname $(dirname $0))`
-echo $PROJECT
+PROJECT=`git rev-parse --show-toplevel`
+echo "Running php-pre-commit hook in $PROJECT"
+
 STAGED_FILES_CMD=`git diff --cached --name-only --diff-filter=ACMR HEAD | grep \\\\.php`
 
 SFILES=${SFILES:-$STAGED_FILES_CMD}
@@ -36,5 +37,8 @@ then
 		fi
 	fi
 fi
+
+echo "Running PHP Stan..."
+./vendor/bin/phpstan --level=0 --memory-limit=-1 analyse $FILES
 
 exit $?
