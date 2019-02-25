@@ -8,10 +8,7 @@ composer require --dev squizlabs/php_codesniffer phpstan/phpstan
 #### Setup
 - add project as git submodule relative (from gitlab) to your project
      ```
-     # file: .gitmodules example for dating/fusion project
-     [submodule "_code_quality"]
-        	path = _code_quality
-        	url = git@github.com:ezweb/code_quality.git
+     git submodule add git@github.com:ezweb/code_quality.git code_quality
      ```
 - you can also call hooks provided in your project 
     ```
