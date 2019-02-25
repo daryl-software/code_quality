@@ -36,9 +36,10 @@ then
 			exit 1
 		fi
 	fi
+
+    echo "Running PHP Stan..."
+    ./vendor/bin/phpstan --level=0 --memory-limit=-1 analyse $FILES
 fi
 
-echo "Running PHP Stan..."
-./vendor/bin/phpstan --level=0 --memory-limit=-1 analyse $FILES
 
 exit $?
