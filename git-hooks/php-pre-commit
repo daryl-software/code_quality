@@ -38,7 +38,7 @@ then
 	fi
 
     echo "Running PHP Stan..."
-    ./vendor/bin/phpstan --level=0 --memory-limit=-1 analyse $FILES
+    ./vendor/bin/phpstan --level=max --memory-limit=-1 analyse $FILES
 fi
 
 
