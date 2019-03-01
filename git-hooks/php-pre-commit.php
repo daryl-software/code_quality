@@ -3,6 +3,9 @@
 include __DIR__ . '/src/Execution.php';
 include __DIR__ . '/src/Git.php';
 
+use CodeQuality\Execution;
+use CodeQuality\Git;
+
 $gitdir = (new Execution('Getting git dir', 'git rev-parse --show-toplevel'))->exec() . '/';
 
 $e = new Execution('Getting php staged file(s)', 'git diff --cached --name-only --diff-filter=ACMR HEAD | grep \\\\.php');
@@ -53,4 +56,3 @@ foreach ($phpstan['files'] as $file => $data) {
     }
 }
 exit($exit);
-

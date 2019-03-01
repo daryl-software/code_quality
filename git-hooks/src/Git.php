@@ -1,11 +1,12 @@
 <?php
 
+namespace CodeQuality;
 
 class Git
 {
     public static function diffLineChanged(string $diff, int $extend = 0): array
     {
-        preg_match_all("/^@@ [+-](\d+),(\d+) [+-](\d+),(\d+) @@/m", $diff, $matches, PREG_SET_ORDER);
+        preg_match_all('/^@@ [+-](\\d+),(\\d+) [+-](\\d+),(\\d+) @@/m', $diff, $matches, PREG_SET_ORDER);
         $ranges = [];
         foreach ($matches as $match) {
             $start = min($match[1], $match[3]) - $extend;

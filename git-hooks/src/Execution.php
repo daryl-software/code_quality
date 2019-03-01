@@ -1,5 +1,6 @@
 <?php
 
+namespace CodeQuality;
 
 class Execution
 {
@@ -48,7 +49,7 @@ class Execution
 
     public function printDebug(): void
     {
-        echo '(' . $this->lastExit . ') '. $this->cmd. PHP_EOL;
+        echo '(' . $this->lastExit . ') ' . $this->cmd . PHP_EOL;
         echo $this->lastOutput . PHP_EOL;
     }
 }
