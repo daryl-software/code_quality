@@ -5,7 +5,9 @@ include __DIR__ . '/src/Git.php';
 
 $gitdir = (new Execution('Getting git dir', 'git rev-parse --show-toplevel'))->exec() . '/';
 
-$staggedFiles = explode(PHP_EOL, (new Execution('Getting php staged file(s)', 'git diff --cached --name-only --diff-filter=ACMR HEAD | grep \\\\.php'))->exec());
+$e = new Execution('Getting php staged file(s)', 'git diff --cached --name-only --diff-filter=ACMR HEAD | grep \\\\.php');
+$output = $e->exec(false);
+$staggedFiles = array_filter(explode(PHP_EOL, $output));
 
 if (!count($staggedFiles)) {
     exit(0);
