@@ -13,7 +13,7 @@ composer require --dev squizlabs/php_codesniffer phpstan/phpstan
 - you can also call hooks provided in your project 
     ```
     # .hooks/pre-commit    
-    ./_code_quality/git-hooks/php-pre-commit # call
+    php ./_code_quality/git-hooks/php-pre-commit.php
     ```
      
      
