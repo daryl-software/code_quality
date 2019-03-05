@@ -1,7 +1,7 @@
 <?php
 
-include __DIR__ . '/src/Execution.php';
-include __DIR__ . '/src/Git.php';
+include __DIR__ . '/../src/CodeQuality/Execution.php';
+include __DIR__ . '/../src/CodeQuality/Git.php';
 
 use CodeQuality\Execution;
 use CodeQuality\Git;
