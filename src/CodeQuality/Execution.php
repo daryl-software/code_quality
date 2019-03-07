@@ -12,7 +12,7 @@ class Execution
     /**
      * @var string
      */
-    private $cmd;
+    public $cmd;
 
     /**
      * @var string

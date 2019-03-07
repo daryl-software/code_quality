@@ -6,18 +6,14 @@ include __DIR__ . '/../src/CodeQuality/Git.php';
 use CodeQuality\Execution;
 use CodeQuality\Git;
 
-$gitdir = (new Execution('Getting git dir', 'git rev-parse --show-toplevel'))->exec() . '/';
 
-$e = new Execution('Getting php staged file(s)', 'git diff --cached --name-only --diff-filter=ACMR HEAD | grep \\\\.php');
-$output = $e->exec(false);
-$staggedFiles = array_filter(explode(PHP_EOL, $output));
-
+$staggedFiles = Git::getStaggedFiles('php');
 if (!count($staggedFiles)) {
     exit(0);
 }
 
 foreach ($staggedFiles as $file) {
-    (new Execution('Checking PHP file ' . $file . ' ', 'php -l -d display_errors=0 ' . $gitdir . $file))->exec();
+    (new Execution('Checking PHP file ' . $file . ' ', 'php -l -d display_errors=0 ' . $file))->exec();
 }
 
 $argFiles = implode(' ', $staggedFiles);

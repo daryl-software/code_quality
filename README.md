@@ -3,6 +3,8 @@
 ### Install composer deps in your project
 ```bash
 composer require --dev squizlabs/php_codesniffer phpstan/phpstan
+
+npm install eslint eslint-config-airbnb-base eslint-plugin-import --save-dev
 ```
 
 #### Setup
