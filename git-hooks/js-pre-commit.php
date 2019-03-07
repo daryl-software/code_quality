@@ -12,7 +12,7 @@ if (!count($staggedFiles)) {
 }
 $argFiles = implode(' ', $staggedFiles);
 
-$exec = new Execution('Checking '.count($staggedFiles).' JS files', './node_modules/.bin/eslint --format=json ' . $argFiles);
+$exec = new Execution('Checking ' . count($staggedFiles) . ' JS files', './node_modules/.bin/eslint --format=json ' . $argFiles);
 $check = function (Execution $execution) {
     $output = $execution->exec(false);
     $json = json_decode($output, true);
