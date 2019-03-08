@@ -6,7 +6,6 @@ include __DIR__ . '/../src/CodeQuality/Git.php';
 use CodeQuality\Execution;
 use CodeQuality\Git;
 
-
 $staggedFiles = Git::getStaggedFiles('php');
 if (!count($staggedFiles)) {
     exit(0);
