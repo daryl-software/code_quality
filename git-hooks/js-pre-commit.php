@@ -34,7 +34,7 @@ $check = function (Execution $execution) {
 $total = $check($exec);
 if ($total['fixableErrorCount'] > 0 || $total['fixableWarningCount'] > 0) {
     (new Execution('Fixing ' . count($staggedFiles) . ' JS files', './node_modules/.bin/eslint --fix ' . $argFiles))->exec();
-} else if ($total['errorCount'] > 0) {
+} elseif ($total['errorCount'] > 0) {
     $exec->cmd = str_replace('--format=json', '', $exec->cmd);
     $exec->exec();
 }
