@@ -17,10 +17,10 @@ foreach ($staggedFiles as $file) {
 
 $argFiles = implode(' ', $staggedFiles);
 
-$e = new Execution('Running Code Sniffer', './vendor/bin/phpcs --standard=ruleset.xml --encoding=utf-8 --colors -n -s -p ' . $argFiles);
+$e = new Execution('Running Code Sniffer', './vendor/bin/phpcs --standard=phpcs.xml --encoding=utf-8 --colors -n -s -p ' . $argFiles);
 $e->exec(false);
 if ($e->lastExit > 0 && strpos($e->lastOutput, 'PHPCBF CAN FIX') > 0) {
-    $cbf = (new Execution('Fixable error found, fixing it for you', './vendor/bin/phpcbf --standard=ruleset.xml --encoding=utf-8 -p ' . $argFiles))->exec(false);
+    $cbf = (new Execution('Fixable error found, fixing it for you', './vendor/bin/phpcbf --standard=phpcs.xml --encoding=utf-8 -p ' . $argFiles))->exec(false);
     (new Execution('Adding changes to git', 'git add ' . $argFiles))->exec();
 
     $e->title = 'Running Code Sniffer again';
