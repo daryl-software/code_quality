@@ -20,7 +20,7 @@ npm install eslint eslint-config-airbnb-base eslint-plugin-import --save-dev
      
      
 #### Configure/extend local phpcs configuration
-- add/edit project `ruleset.xml`
+- add/edit project `phpcs.xml`
     ```xml
     <?xml version="1.0"?>
     <ruleset>
