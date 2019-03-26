@@ -14,7 +14,7 @@ class Git
 {
     public static function getStaggedFiles(string $extension): array
     {
-        $e = new Execution('Getting ' . $extension . ' stagged file(s)', 'git diff --cached --name-only --diff-filter=ACMR HEAD | grep \\\\.' . $extension);
+        $e = new Execution('Getting ' . $extension . ' stagged file(s)', 'git diff --cached --name-only --diff-filter=ACMR HEAD | grep "\\\\.' . $extension.'\b"');
         $output = $e->exec(false);
         return array_filter(explode(PHP_EOL, $output));
     }
