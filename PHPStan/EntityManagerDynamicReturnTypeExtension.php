@@ -20,7 +20,7 @@ class EntityManagerDynamicReturnTypeExtension implements DynamicMethodReturnType
 
     public function isMethodSupported(MethodReflection $methodReflection): bool
     {
-        return $methodReflection->getName() === 'getManager';
+        return in_array($methodReflection->getName(), ['getManager', 'getCache'], true);
     }
 
     public function getTypeFromMethodCall(MethodReflection $methodReflection, MethodCall $methodCall, Scope $scope): Type
