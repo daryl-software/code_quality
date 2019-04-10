@@ -35,7 +35,13 @@ class EntityManagerDynamicReturnTypeExtension implements DynamicMethodReturnType
         if ($arg instanceof \PhpParser\Node\Scalar\MagicConst\Class_) {
             return new ObjectType($scope->getClassReflection()->getName());
         }
-//        var_dump($arg);
-        throw new \Exception('PHPSTAN helper error');
+        if ($arg instanceof \PhpParser\Node\Expr\Variable) {
+            throw new \Exception('Cannot analyze variable passed to '.$this->getClass().'::' . $methodReflection->getName() . '($'.$arg->name.')');
+        }
+        if ($arg instanceof \PhpParser\Node\Expr\ArrayDimFetch) {
+            throw new \Exception('Cannot analyze variable passed to '.$this->getClass().'::' . $methodReflection->getName() . '()');
+        }
+        var_dump($arg);
+        throw new \Exception('PHPSTAN helper error ');
     }
 }
