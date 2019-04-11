@@ -1,6 +1,0 @@
-parameters:
-    tasks:
-        phplint: ~
-    ascii:
-        failed: ~
-        succeeded: ~
