@@ -1,0 +1,9 @@
+parameters:
+    tasks:
+        phpstan:
+            autoload_file: _code_quality/PHPStan/autoload.php
+            level: 7
+            memory_limit: '-1'
+    ascii:
+        failed: ~
+        succeeded: ~
