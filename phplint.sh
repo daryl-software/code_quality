@@ -1,3 +1,3 @@
 #!/bin/sh
 
-./vendor/bin/parallel-lint --exclude vendor .
+./vendor/bin/parallel-lint --exclude vendor --no-progress .
