@@ -82,5 +82,8 @@
     <rule ref="Generic.Formatting.MultipleStatementAlignment">
         <exclude name="Generic.Formatting.MultipleStatementAlignment.NotSameWarning"/>
     </rule>
+    <rule ref="PSR2.Namespaces.UseDeclaration">
+        <exclude name="PSR2.Namespaces.UseDeclaration.MultipleDeclarations"/>
+    </rule>
     <rule ref="Generic.Arrays.DisallowLongArraySyntax.Found"/>
 </ruleset>
